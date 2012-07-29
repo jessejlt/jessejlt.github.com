@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Shallow Copy]]></title>
+  <link href="http://jessejlt.github.com/atom.xml" rel="self"/>
+  <link href="http://jessejlt.github.com/"/>
+  <updated>2012-07-29T11:27:58-07:00</updated>
+  <id>http://jessejlt.github.com/</id>
+  <author>
+    <name><![CDATA[Jesse Thompson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Find Stuffs]]></title>
+    <link href="http://jessejlt.github.com/blog/2012/07/29/find-stuffs/"/>
+    <updated>2012-07-29T11:24:00-07:00</updated>
+    <id>http://jessejlt.github.com/blog/2012/07/29/find-stuffs</id>
+    <content type="html"><![CDATA[<h1>Scenario</h1>
+
+<p>I recently purchased a Retina Macbook Pro, and as part of gawking at the <em>ooh! shiny!</em>, I switched through dozens of desktop wallpapers before finding the ones that really popped on the new display. As part of the process of sifting through all my old wallpapers, I realized that of the hundreds I had accumulated over the years, very few of them were of a high resolution. This lead me to trying to figure out a way to quickly weed-out all images less than some threashold of rect.</p>
+
+<p>After a bit of digging around, I found that in 10.7, Apple added a command-line interface to <code>Spotlight</code>. Yay! But even with access to Spotlight, I needed a way to search each image&#8217;s metadata. Much googling and man-pages later, I found what I was looking for.</p>
+
+<figure class='code'><figcaption><span>get searchable metadata tags</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt; mlds wp_2560.jpg
+</span><span class='line'><span class="nv">kMDItemAlternateNames</span>          <span class="o">=</span> <span class="o">(</span>
+</span><span class='line'>    <span class="s2">&quot;wp_2560.jpg&quot;</span>
+</span><span class='line'><span class="o">)</span>
+</span><span class='line'><span class="nv">kMDItemBitsPerSample</span>           <span class="o">=</span> 32
+</span><span class='line'><span class="nv">kMDItemColorSpace</span>              <span class="o">=</span> <span class="s2">&quot;RGB&quot;</span>
+</span><span class='line'><span class="nv">kMDItemContentCreationDate</span>     <span class="o">=</span> 2012-02-11 05:41:56 +0000
+</span><span class='line'><span class="nv">kMDItemContentModificationDate</span> <span class="o">=</span> 2012-02-11 05:41:56 +0000
+</span><span class='line'><span class="nv">kMDItemContentType</span>             <span class="o">=</span> <span class="s2">&quot;public.jpeg&quot;</span>
+</span><span class='line'><span class="nv">kMDItemContentTypeTree</span>         <span class="o">=</span> <span class="o">(</span>
+</span><span class='line'>    <span class="s2">&quot;public.jpeg&quot;</span>,
+</span><span class='line'>    <span class="s2">&quot;public.image&quot;</span>,
+</span><span class='line'>    <span class="s2">&quot;public.data&quot;</span>,
+</span><span class='line'>    <span class="s2">&quot;public.item&quot;</span>,
+</span><span class='line'>    <span class="s2">&quot;public.content&quot;</span>
+</span><span class='line'><span class="o">)</span>
+</span><span class='line'><span class="nv">kMDItemDateAdded</span>               <span class="o">=</span> 2012-07-02 21:31:50 +0000
+</span><span class='line'><span class="nv">kMDItemDisplayName</span>             <span class="o">=</span> <span class="s2">&quot;wp_2560&quot;</span>
+</span><span class='line'><span class="nv">kMDItemDownloadedDate</span>          <span class="o">=</span> <span class="o">(</span>
+</span><span class='line'>    <span class="s2">&quot;2012-02-11 05:41:56 +0000&quot;</span>
+</span><span class='line'><span class="o">)</span>
+</span><span class='line'><span class="nv">kMDItemFSContentChangeDate</span>     <span class="o">=</span> 2012-02-11 05:41:56 +0000
+</span><span class='line'><span class="nv">kMDItemFSCreationDate</span>          <span class="o">=</span> 2012-02-11 05:41:56 +0000
+</span><span class='line'><span class="nv">kMDItemFSCreatorCode</span>           <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span><span class='line'><span class="nv">kMDItemFSFinderFlags</span>           <span class="o">=</span> 16
+</span><span class='line'><span class="nv">kMDItemFSHasCustomIcon</span>         <span class="o">=</span> 0
+</span><span class='line'><span class="nv">kMDItemFSInvisible</span>             <span class="o">=</span> 0
+</span><span class='line'><span class="nv">kMDItemFSIsExtensionHidden</span>     <span class="o">=</span> 1
+</span><span class='line'><span class="nv">kMDItemFSIsStationery</span>          <span class="o">=</span> 0
+</span><span class='line'><span class="nv">kMDItemFSLabel</span>                 <span class="o">=</span> 0
+</span><span class='line'><span class="nv">kMDItemFSName</span>                  <span class="o">=</span> <span class="s2">&quot;wp_2560.jpg&quot;</span>
+</span><span class='line'><span class="nv">kMDItemFSNodeCount</span>             <span class="o">=</span> 1491971
+</span><span class='line'><span class="nv">kMDItemFSOwnerGroupID</span>          <span class="o">=</span> 20
+</span><span class='line'><span class="nv">kMDItemFSOwnerUserID</span>           <span class="o">=</span> 501
+</span><span class='line'><span class="nv">kMDItemFSSize</span>                  <span class="o">=</span> 1491971
+</span><span class='line'><span class="nv">kMDItemFSTypeCode</span>              <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span><span class='line'><span class="nv">kMDItemHasAlphaChannel</span>         <span class="o">=</span> 0
+</span><span class='line'><span class="nv">kMDItemKind</span>                    <span class="o">=</span> <span class="s2">&quot;JPEG image&quot;</span>
+</span><span class='line'><span class="nv">kMDItemLogicalSize</span>             <span class="o">=</span> 1491971
+</span><span class='line'><span class="nv">kMDItemOrientation</span>             <span class="o">=</span> 0
+</span><span class='line'><span class="nv">kMDItemPhysicalSize</span>            <span class="o">=</span> 1495040
+</span><span class='line'><span class="nv">kMDItemPixelCount</span>              <span class="o">=</span> 4096000
+</span><span class='line'><span class="nv">kMDItemPixelHeight</span>             <span class="o">=</span> 1600
+</span><span class='line'><span class="nv">kMDItemPixelWidth</span>              <span class="o">=</span> 2560
+</span><span class='line'><span class="nv">kMDItemResolutionHeightDPI</span>     <span class="o">=</span> 72
+</span><span class='line'><span class="nv">kMDItemResolutionWidthDPI</span>      <span class="o">=</span> 72
+</span><span class='line'><span class="nv">kMDItemWhereFroms</span>              <span class="o">=</span> <span class="o">(</span>
+</span><span class='line'>    <span class="s2">&quot;http://imgs.abduzeedo.com/files/wallpapers/wpw189/wp_2560.jpg&quot;</span>
+</span><span class='line'><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So this gives us a key by which we can search for images based on some width threshold, specifically, <code>kMDItemPixelWidth</code>.</p>
+
+<p>To find images less than 2560 pixels in width, we&#8217;ll use Spotlight coupled with the <code>kMDItemPixelWidth</code> metadata key</p>
+
+<figure class='code'><figcaption><span>Spotlight searching file metadata</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt; mdfind -onlyin ~/Pictures/Wallpaper <span class="s2">&quot;kMDItemPixelWidth &lt; 2560&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Which will yield a list of images matching the criteria, then couple that with <code>rm</code> to remove the images</p>
+
+<figure class='code'><figcaption><span>chaining commands</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt; rm -vf <span class="sb">`</span>mdfind -onlyin ~/Pictures/Wallpaper <span class="s2">&quot;kMDItemPixelWidth &lt; 2560&quot;</span><span class="sb">`</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And voilà, a happily pruned folder of wallpapers sans all the 1024x768 from the good ol&#8217; days :-)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[debugging Mocha tests]]></title>
+    <link href="http://jessejlt.github.com/blog/2012/07/24/debugging-mocha-tests/"/>
+    <updated>2012-07-24T11:22:00-07:00</updated>
+    <id>http://jessejlt.github.com/blog/2012/07/24/debugging-mocha-tests</id>
+    <content type="html"><![CDATA[<h2>Adventures in Node</h2>
+
+<p>About a year ago I wrote a database connector using node.js as an experiment project to learn more about server-side javascript; at the time, my greatest complaint with node was its debugging capability, or lack-thereof. A lot has changed in the past year, though, and node is one of the fastest growing <em>technologies</em>, so I decided to give node another try on a new small project.</p>
+
+<p>Very early in the re-discovery process the debug-ability of node became an issue again. I decided to write all my tests using <a href="http://visionmedia.github.com/mocha/">Mocha</a>, but right away I had issues figuring out how to debug the failing tests.</p>
+
+<p>At first I simply tried starting a <a href="https://github.com/dannycoates/node-inspector/">node-inspector</a> instance in one terminal, and invoking Mocha with the <code>--debug-brk</code> command, which allowed me to connect to Mocha, but it took quite a bit of stepping through the code before my test file was finally loaded.</p>
+
+<p>After a bit of digging around, I figured out that invoking Mocha with the file containg the test I wanted to debug meant that I could more quickly load the test file that I was looking for.</p>
+
+<p><code>mocha --debug-brk test/test-mytests.js</code></p>
+
+<p>So this worked well, but it still meant stepping through things before my file was actually loaded. Looking at Mocha&#8217;s source, though, lead me to putting a breakpoint in Mocha&#8217;s final <code>run</code> function, which is the final stop before Mocha actually executes my tests.</p>
+
+<p>The next issue I ran into was a mysterious error when debugging <code>Error: timeout of 2000ms exceeded</code>, after a bit of head-scratching, I realized mocha has a testing timeout of 2 seconds, which is of course going to always be hit when debugging, so modify the above command to include a more reasonable timeout (though it would be nice to just disable the timeout altogether)</p>
+
+<p><code>mocha --debug-brk -t 999999 test/test-mytests.js</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[desktop replacement]]></title>
+    <link href="http://jessejlt.github.com/blog/2012/07/09/desktop-replacement/"/>
+    <updated>2012-07-09T11:20:00-07:00</updated>
+    <id>http://jessejlt.github.com/blog/2012/07/09/desktop-replacement</id>
+    <content type="html"><![CDATA[<h3>Desktop Replacement</h3>
+
+<p>About a year ago I tried to replace my desktop with a Macbook Air &#8211; the machine was up to the task, but at only 4 GB, the lack of RAM proved to be the limiting factor. Earlier this year when Apple announced a new Air with 8 GB of RAM and Ivybridge processors, including a fairly significant I/O performance boost. The new Air was upgrade worthy, but in the end I decided to opt for a Macbook Pro with Retina display &#8211; 16 GB of RAM, lighter, thinner, substantially faster I/O, and of course, the new display, made me revisit the notion of a <em>desktop replacement</em>.</p>
+
+<h3>Initial Impressions</h3>
+
+<p>I&#8217;ve had the machine for about a week now and have yet to turn on my tower, that said, Adobe has given us the week off (we get the first week of July off each year), so the real test will be once I&#8217;m actually back on my office. That said, some of the more demanding  NONB tasks, such as photography post processing in <strong>Lightroom</strong> have not dissapointed.
+* <strong>Disk I/O</strong> is ridiculously fast; I&#8217;m seeing ~ 460 MB/s for both read and write.
+* <strong>USB 3</strong> no big surprises here, it rocks. Attaching the <a href="http://www.lacie.com/products/product.htm?id=10554">Lacie enclosure</a> vis USB3 is plenty fast for storing / working with photos, virtual machines, and larger Perforce depots.
+* <strong>Retina</strong> is a little ahead of its time on the desktop &#8211; the majority of my apps aren&#8217;t ready for the display, both those that are look incredible.</p>
+
+<h3>Surprises</h3>
+
+<h4>Web</h4>
+
+<p>Even as a web developer, I&#8217;m shocked at how terrible most websites look with the Retina display. Yay for sprites and vector graphics.</p>
+
+<h4>Speakers</h4>
+
+<p>I&#8217;ve never really use the onboard speakers, both because I have a great pair of <a href="http://westonemusicproducts.com/music/index.php/products/personal-listening/westone-3.html">headphones</a> and because laptop speakers sound terrible, but I was pleasantly surprised to found out just how <em>good</em> the speakers are on the new MBP.</p>
+
+<h4>Graphics Glitches</h4>
+
+<p>Some apps are rendering rather <em>strangely</em>. I&#8217;ve noticed the issue mostly when an app is pushed to the background and then back to foreground. Github.app is the most consistant offender, but plenty of other apps are exhibiting similar behavior.</p>
+
+<p><img src="http://jessejlt.github.com/assets/images/github-gfx-glitch.png" alt="github.app gfx glitch" /></p>
+
+<h4>Battery Life</h4>
+
+<p>Thus far I&#8217;m not impressed with the battery life; I&#8217;m seeing around four hours of real use before the batter drops below 10%.</p>
+
+<h4>Speed</h4>
+
+<p>I knew it would be fast, but wow, this thing screams.</p>
+
+<h3>Conclusion</h3>
+
+<p>Again, I haven&#8217;t had this machine for very long, but thus far I&#8217;m a happy customer and I feel fairly confident that I&#8217;ve found a desktop replacement.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello, World!]]></title>
+    <link href="http://jessejlt.github.com/blog/2012/07/08/hello/"/>
+    <updated>2012-07-08T11:16:00-07:00</updated>
+    <id>http://jessejlt.github.com/blog/2012/07/08/hello</id>
+    <content type="html"><![CDATA[<h3>Who?</h3>
+
+<p>Jesse Thompson, software engineer at Adobe Systems in Seattle, WA. I started my career at Adobe working in the audio department, then transfered to a core audio and video engine group, and currently work on creating tools for DVA at large &#8211; this has given me a wonderful opportunity to break out of my comfort zone and learn lots of really exciting new (to me) technologies.</p>
+
+<h3>What?</h3>
+
+<p>I&#8217;ve wanted to start a <em>blog</em> for a while now to help account for all the new stuff I learn, and the struggles therein. My core competency is C and C++, but I&#8217;ve since diverged quite a bit and now live in the land of dynamic languages. My current playground is Python and Javascript. A short longterm goal is to add Objective-C to this list.</p>
+
+<h3>Why?</h3>
+
+<p>Hopefully someone somewhere will stumble upon this humble collection of scattered thoughts and find something helpful and hopefully save them some of the time and headaches I went through while learning x, y, or z.</p>
+]]></content>
+  </entry>
+  
+</feed>

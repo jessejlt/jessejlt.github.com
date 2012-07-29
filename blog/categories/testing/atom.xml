@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: testing | Shallow Copy]]></title>
+  <link href="http://jessejlt.github.com/blog/categories/testing/atom.xml" rel="self"/>
+  <link href="http://jessejlt.github.com/"/>
+  <updated>2012-07-29T11:27:58-07:00</updated>
+  <id>http://jessejlt.github.com/</id>
+  <author>
+    <name><![CDATA[Jesse Thompson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[debugging Mocha tests]]></title>
+    <link href="http://jessejlt.github.com/blog/2012/07/24/debugging-mocha-tests/"/>
+    <updated>2012-07-24T11:22:00-07:00</updated>
+    <id>http://jessejlt.github.com/blog/2012/07/24/debugging-mocha-tests</id>
+    <content type="html"><![CDATA[<h2>Adventures in Node</h2>
+
+<p>About a year ago I wrote a database connector using node.js as an experiment project to learn more about server-side javascript; at the time, my greatest complaint with node was its debugging capability, or lack-thereof. A lot has changed in the past year, though, and node is one of the fastest growing <em>technologies</em>, so I decided to give node another try on a new small project.</p>
+
+<p>Very early in the re-discovery process the debug-ability of node became an issue again. I decided to write all my tests using <a href="http://visionmedia.github.com/mocha/">Mocha</a>, but right away I had issues figuring out how to debug the failing tests.</p>
+
+<p>At first I simply tried starting a <a href="https://github.com/dannycoates/node-inspector/">node-inspector</a> instance in one terminal, and invoking Mocha with the <code>--debug-brk</code> command, which allowed me to connect to Mocha, but it took quite a bit of stepping through the code before my test file was finally loaded.</p>
+
+<p>After a bit of digging around, I figured out that invoking Mocha with the file containg the test I wanted to debug meant that I could more quickly load the test file that I was looking for.</p>
+
+<p><code>mocha --debug-brk test/test-mytests.js</code></p>
+
+<p>So this worked well, but it still meant stepping through things before my file was actually loaded. Looking at Mocha's source, though, lead me to putting a breakpoint in Mocha's final <code>run</code> function, which is the final stop before Mocha actually executes my tests.</p>
+
+<p>The next issue I ran into was a mysterious error when debugging <code>Error: timeout of 2000ms exceeded</code>, after a bit of head-scratching, I realized mocha has a testing timeout of 2 seconds, which is of course going to always be hit when debugging, so modify the above command to include a more reasonable timeout (though it would be nice to just disable the timeout altogether)</p>
+
+<p><code>mocha --debug-brk -t 999999 test/test-mytests.js</code></p>
+]]></content>
+  </entry>
+  
+</feed>

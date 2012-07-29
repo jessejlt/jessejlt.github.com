@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: personal | Shallow Copy]]></title>
+  <link href="http://jessejlt.github.com/blog/categories/personal/atom.xml" rel="self"/>
+  <link href="http://jessejlt.github.com/"/>
+  <updated>2012-07-29T11:27:58-07:00</updated>
+  <id>http://jessejlt.github.com/</id>
+  <author>
+    <name><![CDATA[Jesse Thompson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[desktop replacement]]></title>
+    <link href="http://jessejlt.github.com/blog/2012/07/09/desktop-replacement/"/>
+    <updated>2012-07-09T11:20:00-07:00</updated>
+    <id>http://jessejlt.github.com/blog/2012/07/09/desktop-replacement</id>
+    <content type="html"><![CDATA[<h3>Desktop Replacement</h3>
+
+<p>About a year ago I tried to replace my desktop with a Macbook Air -- the machine was up to the task, but at only 4 GB, the lack of RAM proved to be the limiting factor. Earlier this year when Apple announced a new Air with 8 GB of RAM and Ivybridge processors, including a fairly significant I/O performance boost. The new Air was upgrade worthy, but in the end I decided to opt for a Macbook Pro with Retina display -- 16 GB of RAM, lighter, thinner, substantially faster I/O, and of course, the new display, made me revisit the notion of a <em>desktop replacement</em>.</p>
+
+<h3>Initial Impressions</h3>
+
+<p>I've had the machine for about a week now and have yet to turn on my tower, that said, Adobe has given us the week off (we get the first week of July off each year), so the real test will be once I'm actually back on my office. That said, some of the more demanding  NONB tasks, such as photography post processing in <strong>Lightroom</strong> have not dissapointed.
+* <strong>Disk I/O</strong> is ridiculously fast; I'm seeing ~ 460 MB/s for both read and write.
+* <strong>USB 3</strong> no big surprises here, it rocks. Attaching the <a href="http://www.lacie.com/products/product.htm?id=10554">Lacie enclosure</a> vis USB3 is plenty fast for storing / working with photos, virtual machines, and larger Perforce depots.
+* <strong>Retina</strong> is a little ahead of its time on the desktop -- the majority of my apps aren't ready for the display, both those that are look incredible.</p>
+
+<h3>Surprises</h3>
+
+<h4>Web</h4>
+
+<p>Even as a web developer, I'm shocked at how terrible most websites look with the Retina display. Yay for sprites and vector graphics.</p>
+
+<h4>Speakers</h4>
+
+<p>I've never really use the onboard speakers, both because I have a great pair of <a href="http://westonemusicproducts.com/music/index.php/products/personal-listening/westone-3.html">headphones</a> and because laptop speakers sound terrible, but I was pleasantly surprised to found out just how <em>good</em> the speakers are on the new MBP.</p>
+
+<h4>Graphics Glitches</h4>
+
+<p>Some apps are rendering rather <em>strangely</em>. I've noticed the issue mostly when an app is pushed to the background and then back to foreground. Github.app is the most consistant offender, but plenty of other apps are exhibiting similar behavior.</p>
+
+<p><img src="/assets/images/github-gfx-glitch.png" alt="github.app gfx glitch" /></p>
+
+<h4>Battery Life</h4>
+
+<p>Thus far I'm not impressed with the battery life; I'm seeing around four hours of real use before the batter drops below 10%.</p>
+
+<h4>Speed</h4>
+
+<p>I knew it would be fast, but wow, this thing screams.</p>
+
+<h3>Conclusion</h3>
+
+<p>Again, I haven't had this machine for very long, but thus far I'm a happy customer and I feel fairly confident that I've found a desktop replacement.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello, World!]]></title>
+    <link href="http://jessejlt.github.com/blog/2012/07/08/hello/"/>
+    <updated>2012-07-08T11:16:00-07:00</updated>
+    <id>http://jessejlt.github.com/blog/2012/07/08/hello</id>
+    <content type="html"><![CDATA[<h3>Who?</h3>
+
+<p>Jesse Thompson, software engineer at Adobe Systems in Seattle, WA. I started my career at Adobe working in the audio department, then transfered to a core audio and video engine group, and currently work on creating tools for DVA at large -- this has given me a wonderful opportunity to break out of my comfort zone and learn lots of really exciting new (to me) technologies.</p>
+
+<h3>What?</h3>
+
+<p>I've wanted to start a <em>blog</em> for a while now to help account for all the new stuff I learn, and the struggles therein. My core competency is C and C++, but I've since diverged quite a bit and now live in the land of dynamic languages. My current playground is Python and Javascript. A short longterm goal is to add Objective-C to this list.</p>
+
+<h3>Why?</h3>
+
+<p>Hopefully someone somewhere will stumble upon this humble collection of scattered thoughts and find something helpful and hopefully save them some of the time and headaches I went through while learning x, y, or z.</p>
+]]></content>
+  </entry>
+  
+</feed>
